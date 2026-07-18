@@ -31,7 +31,7 @@ const router = createRouter({
         {
           path: 'topic/dashboard',
           name: 'TopicDashboard',
-          // component: () => import('@/views/TopicDashboard.vue'),
+          component: () => import('@/views/PracticeDashboard.vue'),
           meta: { title: '专项记录分析' }
         },
         {
