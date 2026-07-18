@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const request = axios.create({
   // 因为配置了 Vite 代理，这里直接留空即可，会自动走 5173 代理转发
-  baseURL: '', 
+  baseURL: '',
   timeout: 5000
 });
 
@@ -17,6 +17,11 @@ export function getExamList(params) {
 }
 
 // 3. 获取每周趋势分析
-export function getWeeklyTrend() {
-  return request.get('/exam/weekly-trend');
+export function getWeeklyTrend(params) {
+  return request.get('/exam/weekly-trend', { params });
+}
+
+// 4. 获取模块统计数据
+export function getModuleStats(params) {
+  return request.get('/exam/module-stats', { params });
 }
